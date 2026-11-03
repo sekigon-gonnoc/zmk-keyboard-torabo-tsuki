@@ -149,7 +149,7 @@
 
     trackball: trackball@0 {
         status = "okay";
-        compatible = "pixart,pmw3610";
+        compatible = "sekigon,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
         irq-gpios = <&gpio0 23 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
@@ -158,6 +158,6 @@
         power-gpios = <&bmp 14 GPIO_ACTIVE_HIGH>;
         // snipe-layers = <1>;
         // scroll-layers = <2 3>;
-        automouse-layer = <1>;
+        // automouse-layer = <1>;
     };
 };
