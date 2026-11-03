@@ -13,6 +13,12 @@ manifest:
       url: https://github.com/sekigon-gonnoc/zmk-feature-nemu-link
       revision: zmk-v0.4
       import: config/west.yml
+    - name: zmk-feature-dynamic-settings
+      remote: sekigon-gonnoc
+    - name: zmk-feature-dynamic-input-processor
+      remote: sekigon-gonnoc
+    - name: zmk-feature-nemu-link-scan
+      remote: sekigon-gonnoc
     - name: zmk-component-ble-micro-pro
       remote: sekigon-gonnoc
       revision: main
