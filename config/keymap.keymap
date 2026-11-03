@@ -6,16 +6,6 @@
 #include <behaviors/nemu_link.dtsi>
 
 / {
-    combos {
-        compatible = "zmk,combos";
-
-        bt_clear {
-            bindings = <&bt BT_CLR>;
-            key-positions = <28 29>;
-            layers = <2>;
-        };
-    };
-
     keymap {
         compatible = "zmk,keymap";
 

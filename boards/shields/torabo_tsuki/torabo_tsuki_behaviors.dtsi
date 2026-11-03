@@ -1,0 +1,39 @@
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+/ {
+    dynamic_macro_manager: dynamic_macro_manager {
+        compatible = "sekigon,dynamic-macro-manager";
+        // record-max-length = <128>; // 設定可能な最大マクロ長を指定する。デフォルトは128
+    };
+
+    // 各スロットのデフォルトを設定したい場合はdtsiに記載する
+
+    // macro_slot0: macro_slot0 {
+    //     compatible = "sekigon,dynamic-behavior-macro";
+    //     #binding-cells = <0>;
+    //     target-role = "keyboard-left";
+    //     bindings = <&kp F12>;
+    // };
+
+    // combo_slot0: combo_slot0 {
+    //     compatible = "sekigon,dynamic-combo-slot";
+    //     slot-index = <0>;
+    //     target-role = "keyboard-left";
+    //     default-key-positions = <28 29>;
+    //     default-timeout-ms = <50>;
+    //     default-layer-mask = <4>;
+    //     default-binding = <&bt BT_CLR>;
+    //     default-release-mode = <0>;
+    // };
+
+    // runtime_tap_dance0: runtime-tap-dance0 {
+    //     compatible = "sekigon,dynamic-behavior-tap-dance";
+    //     #binding-cells = <0>;
+    //     slot-index = <0>;
+    //     target-role = "keyboard-left";
+    //     default-term-ms = <200>;
+    //     default-tap = <&kp ESC>;
+    //     default-hold = <&kp LCTRL>;
+    // };
+};

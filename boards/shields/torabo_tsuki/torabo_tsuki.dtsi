@@ -1,5 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
 #include "torabo_tsuki_layouts.dtsi"
+#include "torabo_tsuki_behaviors.dtsi"
 
 / {
     chosen {

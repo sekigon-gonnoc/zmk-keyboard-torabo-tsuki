@@ -2,19 +2,10 @@
 #include <input/processors.dtsi>
 #include <input_processors/zmk-input-processor-pointer-settings.dtsi>
 #include <dt-bindings/zmk/input_transform.h>
+#include "torabo_tsuki_encoder_sources.dtsi"
+#include "torabo_tsuki_input_processor.dtsi"
 
 &trackball_listener {
     input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
                         &dynamic_processor>;
-};
-
-/ {
-    dynamic_processor: dynamic_processor {
-        compatible = "zmk,input-processor-pointer";
-        #input-processor-cells = <0>;
-        status = "okay";
-    };
-
-    DYNAMIC_INPUT_PROCESSOR_POINTER_SETTINGS(
-        pointer_settings, "trackball-left", "keyboard-left", "Trackball", dynamic_processor, "shared")
 };

@@ -1,0 +1,12 @@
+
+/ {
+    dynamic_processor: dynamic_processor {
+        compatible = "zmk,input-processor-pointer";
+        #input-processor-cells = <0>;
+        status = "okay";
+        encoder-sensor-indices = <0 1>;
+    };
+
+    DYNAMIC_INPUT_PROCESSOR_POINTER_SETTINGS(
+        pointer_settings, "trackball-left", "keyboard-left", "Trackball", dynamic_processor, "shared")
+};

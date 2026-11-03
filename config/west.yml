@@ -17,6 +17,14 @@ manifest:
       remote: sekigon-gonnoc
     - name: zmk-feature-dynamic-input-processor
       remote: sekigon-gonnoc
+    - name: zmk-feature-dynamic-macro
+      remote: sekigon-gonnoc
+    - name: zmk-feature-dynamic-combo
+      remote: sekigon-gonnoc
+    - name: zmk-feature-dynamic-tap-dance
+      remote: sekigon-gonnoc
+    - name: zmk-feature-dynamic-encoder
+      remote: sekigon-gonnoc
     - name: zmk-feature-nemu-link-scan
       remote: sekigon-gonnoc
     - name: zmk-component-ble-micro-pro

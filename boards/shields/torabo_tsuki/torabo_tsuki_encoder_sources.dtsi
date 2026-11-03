@@ -1,0 +1,42 @@
+/* SPDX-License-Identifier: MIT */
+
+/ {
+    pointer_encoder_sensor_x: pointer_encoder_sensor_x {
+        status = "disabled";
+    };
+
+    pointer_encoder_sensor_y: pointer_encoder_sensor_y {
+        status = "disabled";
+    };
+
+    keymap_sensors: keymap_sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&pointer_encoder_sensor_x &pointer_encoder_sensor_y>;
+        triggers-per-rotation = <1>;
+    };
+
+    dynamic_encoder_behavior: dynamic_encoder_behavior {
+        compatible = "sekigon,dynamic-behavior-runtime-encoder";
+        #binding-cells = <0>;
+    };
+
+    pointer_encoder_x: pointer_encoder_x {
+        compatible = "sekigon,dynamic-encoder-source";
+        source-name = "pointer-x";
+        label = "Pointer X";
+        sensor = <&pointer_encoder_sensor_x>;
+        sensor-index = <0>;
+        input-mode = "tick";
+        target-role = "keyboard-left";
+    };
+
+    pointer_encoder_y: pointer_encoder_y {
+        compatible = "sekigon,dynamic-encoder-source";
+        source-name = "pointer-y";
+        label = "Pointer Y";
+        sensor = <&pointer_encoder_sensor_y>;
+        sensor-index = <1>;
+        input-mode = "tick";
+        target-role = "keyboard-left";
+    };
+};
