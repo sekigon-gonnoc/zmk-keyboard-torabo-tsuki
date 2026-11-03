@@ -1,0 +1,31 @@
+
+#include <dt-bindings/zmk/input_transform.h>
+#include <input/processors.dtsi>
+#include "../../../boards/shields/torabo_tsuki/torabo_tsuki_layouts.dtsi"
+
+/ {
+    chosen {
+        zmk,physical-layout = &physical_layout_l;
+    };
+
+    nemu_link {
+        compatible = "sekigon,nemu-link-radio";
+    };
+
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        trackball_input_split: trackball_input_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+        };
+    };
+
+    trackball_input_listener: trackball_input_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball_input_split>;
+        status = "okay";
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+    };
+};
