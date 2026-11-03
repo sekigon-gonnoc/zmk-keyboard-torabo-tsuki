@@ -12,19 +12,6 @@ include:
     cmake-args: >-
       -DCONFIG_ZMK_NEMU_LINK_PERIPHERAL_ID=0
     artifact-name: torabo_tsuki_right_peripheral
-  - board: ble_micro_pro
-    shield: torabo_tsuki_left
-    snippet: studio-rpc-usb-uart
-    cmake-args: >-
-      -DCONFIG_ZMK_NEMU_LINK_PERIPHERAL_ID=0
-    artifact-name: torabo_tsuki_left_peripheral
-  - board: ble_micro_pro
-    shield: torabo_tsuki_right
-    snippet: studio-rpc-usb-uart
-    cmake-args: >-
-      -DCONFIG_ZMK_NEMU_LINK_PERIPHERAL_ID=1
-      -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
-    artifact-name: torabo_tsuki_right_central
   - board: nemu-link-dongle
     snippet: studio-rpc-usb-uart
     artifact-name: nemu-link-dongle

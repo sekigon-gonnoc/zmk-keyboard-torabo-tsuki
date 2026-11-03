@@ -1,6 +1,8 @@
 
 #include <dt-bindings/zmk/input_transform.h>
 #include <input/processors.dtsi>
+#include <input_processors/zmk-input-processor-pointer-settings.dtsi>
+#include <nemu-link-full-scan.dtsi>
 #include "../../../boards/shields/torabo_tsuki/torabo_tsuki_layouts.dtsi"
 
 / {
@@ -26,6 +28,16 @@
         compatible = "zmk,input-listener";
         device = <&trackball_input_split>;
         status = "okay";
-        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
+        input-processors = <&zip_xy_transform (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)
+                            &dynamic_processor>;
     };
+
+    dynamic_processor: dynamic_processor {
+        compatible = "zmk,input-processor-pointer";
+        #input-processor-cells = <0>;
+        status = "okay";
+    };
+
+    DYNAMIC_INPUT_PROCESSOR_POINTER_SETTINGS(
+        pointer_settings, "trackball-left", "keyboard-left", "Trackball", dynamic_processor, "shared")
 };
